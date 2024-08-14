@@ -11,10 +11,41 @@ const PORT = process.env.PORT || 3030;
 app.listen(PORT, () => {
   console.log(`server started on port ${PORT}`);
 });
-let wb=xlsx.readFile('students.xlsx');
-let ws=wb.Sheets['student'];
-let data=xlsx.utils.sheet_to_json(ws);
-console.log(data);
+var data=[{
+  id:1,
+  name:"mohamad",
+  adress:"akkar",
+  position:"team leader",
+  salary:"1500$"},
+  {
+    id:2,
+    name:"omar",
+    adress:"beirut",
+    position:"manager",
+    salary:"2000$",
+  },
+  {
+    id:3,
+    name:"ayman",
+    adress:"koura",
+    position:"waiter",
+    salary:"1100$",
+  },
+  {
+    id:4,
+    name:"hassan",
+    adress:"tripoli",
+    position:"waiter",
+    salary:"1100$",
+  },
+  {
+    id:5,
+    name:"rim",
+    adress:"akkar",
+    position:"hostess",
+    salary:"1500$",
+  }]
+  
 app.get('/', function (req, res) {
     res.send(data)
   })
