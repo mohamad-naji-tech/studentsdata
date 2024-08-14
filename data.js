@@ -2,7 +2,15 @@ const express = require('express')
 const app = express()
 let xlsx=require('xlsx');
 
-app.listen(3000)
+
+
+const PORT = process.env.PORT || 3030;
+
+
+
+app.listen(PORT, () => {
+  console.log(`server started on port ${PORT}`);
+});
 let wb=xlsx.readFile('students.xlsx');
 let ws=wb.Sheets['student'];
 let data=xlsx.utils.sheet_to_json(ws);
